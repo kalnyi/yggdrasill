@@ -1,6 +1,7 @@
 package com.iggdrasill.baldr.parser;
 
 import java.io.InputStream;
+import java.util.List;
 
 /**
  *
@@ -9,5 +10,5 @@ import java.io.InputStream;
  */
 public interface Parser {
 
-    <T> T parse(InputStream file, Class<T> type, InputStream config);
+    <T> List<T> parse(InputStream file, Class<T> type, InputStream config);
 }

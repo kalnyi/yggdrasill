@@ -2,6 +2,7 @@ package com.iggdrasill.baldr.parser.impl;
 
 import com.iggdrasill.baldr.parser.Parser;
 import java.io.ByteArrayInputStream;
+import java.util.List;
 import junit.framework.Assert;
 import org.junit.Test;
 
@@ -23,7 +24,8 @@ public class CsvParserTest {
                 + "<lastName>2</lastName>"
                 + "<age>3</age>"
                 + "</root>";
-        Person parsed = parser.parse(is, Person.class, new ByteArrayInputStream(cfg.getBytes()));
-        Assert.assertNotNull(parsed);
+        List<Person> parsedList = parser.parse(is, Person.class, new ByteArrayInputStream(cfg.getBytes()));
+        Assert.assertNotNull(parsedList);
+        Assert.assertFalse(parsedList.isEmpty());
     }
 }
